@@ -13,9 +13,6 @@ interface GameState {
   turn: GameSymbol;
   winner: GameSymbol | null;
   over: Boolean;
-  resolve: (value: GameSymbol | "TIE") => void;
-  reject: (error: any) => void;
-  result: Promise<GameSymbol | "TIE">;
 }
 
 export const Root = {
