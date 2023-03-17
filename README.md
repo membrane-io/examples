@@ -12,6 +12,6 @@ Listado de Programas y sus las funciones que utiliza:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| (Hello-world)[] |[state]|
-| (Ping-Pong)[] |[state, actions]|
-| (Tic-Tac-Toe)[] |[state, endpoints]|
+| [Hello-world]() |[state]|
+| [Ping-Pong]() |[state, actions]|
+| [Tic-Tac-Toe]() |[state, endpoints]|
