@@ -12,6 +12,6 @@ List of programs and their functions:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| [Hello-world]() |[state]|
-| [Ping-Pong]() |[state, actions]|
+| [Hello-world]() |[actions]|
+| [Ping-Pong]() |[state, actions, events]|
 | [Tic-Tac-Toe]() |[state, endpoints]|
