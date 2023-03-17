@@ -1,0 +1,16 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "fields": [
+          {
+            "name": "greet",
+            "type": "String",
+            "params": [{ "name": "name", "type": "String" }]
+          }
+        ]
+      }
+    ]
+  }
+}

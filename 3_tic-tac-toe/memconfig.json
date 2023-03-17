@@ -1,0 +1,52 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": [
+          {
+            "name": "endpoint",
+            "description": "",
+            "type": "String",
+            "params": [
+              {
+                "name": "method",
+                "type": "String"
+              },
+              {
+                "name": "body",
+                "type": "String"
+              },
+              {
+                "name": "path",
+                "type": "String"
+              },
+              {
+                "name": "query",
+                "type": "String"
+              },
+              {
+                "name": "headers",
+                "type": "String"
+              }
+            ],
+            "hints": {
+              "hidden": true
+            }
+          },
+          {
+            "name": "setup",
+            "type": "Void"
+          }
+        ],
+        "fields": [],
+        "events": [
+          {
+            "name": "event1",
+            "type": "String"
+          }
+        ]
+      }
+    ]
+  }
+}
