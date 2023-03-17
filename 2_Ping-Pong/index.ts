@@ -18,6 +18,7 @@ export const Root = {
 
 export async function handler({ event }) {
   if (event === "Ping!") {
+    // Schedule a "pong" event 5 seconds in the future using the root node
     const time = new Date(new Date().getTime() + 5 * 1000);
     await root.pong.$invokeAt(time);
   }
