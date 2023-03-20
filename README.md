@@ -1,17 +1,15 @@
-Membrane Examples
+## Membrane Examples
 
-This repository contains a variety of programs that will allow you to get to know the functionality offered by membrane.io.
+This repository contains a variety of programs demonstrate some functionality of Membrane.
 
-Some of these programs often require the installation and configuration of the corresponding drivers in your Membrane.io account.
+Some of these examples require the installation and configuration of relevant drivers in your Membrane account.
 
-Although the [directory](https://github.com/membrane-io/directory) repository maintains a selection of drivers, the Membrane community can also create and publish others.
-
-If you have any questions or need help, the Membrane team is available to help you on their Discord channel.
+[Join our Discord](https://discord.gg/4RHyJDV8kj) if you have any questions or just want to hang out.
 
 List of programs and their functions:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| [Hello-world]() |[actions]|
-| [Ping-Pong]() |[state, actions, events]|
-| [Tic-Tac-Toe]() |[state, endpoints]|
+| [Hello-world]() |Actions|
+| [Ping-Pong]() |State, Actions, Events|
+| [Tic-Tac-Toe]() |State, Endpoints|
