@@ -1,0 +1,44 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "fields": [
+          {
+            "name": "status",
+            "type": "String"
+          }
+        ],
+        "actions": [
+          {
+            "name": "setup",
+            "type": "Void",
+            "params": [
+              {
+                "name": "api_key",
+                "type": "String"
+              },
+              {
+                "name": "zip_code",
+                "type": "String"
+              },
+              {
+                "name": "country_code",
+                "type": "String"
+              }
+            ]
+          },
+          {
+            "name": "alert",
+            "type": "Void"
+          }
+        ],
+        "events": []
+      }
+    ]
+  },
+  "dependencies": {
+    "http": "http:",
+    "sms": "sms:"
+  }
+}

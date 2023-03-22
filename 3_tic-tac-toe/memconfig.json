@@ -37,6 +37,16 @@
           {
             "name": "setup",
             "type": "Void"
+          },
+          {
+            "name": "move",
+            "type": "Void",
+            "params": [
+              {
+                "name": "cell",
+                "type": "Int"
+              }
+            ]
           }
         ],
         "fields": [],

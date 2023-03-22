@@ -16,12 +16,34 @@ interface GameState {
 }
 
 export const Root = {
-  setup() {
+  setup: () => {
     const board: GameBoard = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => ""));
     const turn: GameSymbol = "X";
     let winner: GameSymbol | null = null;
 
     state.game = { board, turn, winner };
+  },
+  move: ({ args: { cell } }) => {
+    const game = state.game;
+    const move = Number(cell);
+    if (
+      isNaN(move) ||
+      move < 1 ||
+      move > 9 ||
+      game.board[Math.floor((move - 1) / 3)][(move - 1) % 3] !== ""
+    ) {
+      return JSON.stringify({ status: 400, body: "Invalid move" });
+    }
+    // Update the game board with the requested move
+    game.board[Math.floor((move - 1) / 3)][(move - 1) % 3] = game.turn;
+    if (checkWinner(game.board, game.turn)) {
+      game.winner = game.turn;
+    } else if (checkTie(game.board)) {
+      game.over = true;
+      return JSON.stringify({ status: 303, headers: { location: "/" } });
+    }
+    // Update the turn
+    game.turn = game.turn === "X" ? "O" : "X";
   },
   endpoint: async ({ args: { path, method } }) => {
     // If the path is "/restart", reset the game state and redirect to the root path
@@ -29,44 +51,20 @@ export const Root = {
       await root.setup();
       return JSON.stringify({ status: 303, headers: { location: "/" } });
     }
-
     // Parse the requested cell and get the current game state
     const [, cell] = path.split("/");
     const game = state.game;
-
     // If the game is over, return the current state as HTML
     if (game.winner || game.over) {
       return html(game);
     }
-
     // If the game board is not set up, return an error message
     if (!game.board) {
       return JSON.stringify({ status: 404, body: "Run :setup action" });
     }
-
     // check if the requested move is valid
     if (method === "POST") {
-      const move = Number(cell);
-      if (
-        isNaN(move) ||
-        move < 1 ||
-        move > 9 ||
-        game.board[Math.floor((move - 1) / 3)][(move - 1) % 3] !== ""
-      ) {
-        return JSON.stringify({ status: 400, body: "Invalid move" });
-      }
-
-      // Update the game board with the requested move
-      game.board[Math.floor((move - 1) / 3)][(move - 1) % 3] = game.turn;
-      if (checkWinner(game.board, game.turn)) {
-        game.winner = game.turn;
-      } else if (checkTie(game.board)) {
-        game.over = true;
-        return JSON.stringify({ status: 303, headers: { location: "/" } });
-      }
-
-      // Update the turn
-      game.turn = game.turn === "X" ? "O" : "X";
+      await root.move(cell);
       return JSON.stringify({ status: 303, headers: { location: "/" } });
     } else if (method === "GET") {
       // If the request method is GET, return the current game state as HTML

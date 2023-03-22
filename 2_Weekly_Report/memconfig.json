@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "document": "google-docs:documents.one(id:\"16xt-S9yYXI-uw8VipwxZSa7BRch9CAfMir3rJvkh4xU\")",
+    "gdocs": "google-docs:",
+    "membrane": "github:users.one(name:\"membrane-io\")",
+    "http": "http:",
+    "github": "github:"
+  },
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "fields": [],
+        "actions": [
+          {
+            "name": "setup",
+            "type": "Void"
+          },
+          {
+            "name": "report",
+            "params": [
+              {
+                "name": "org",
+                "type": "String"
+              }
+            ],
+            "type": "Void"
+          }
+        ]
+      }
+    ]
+  }
+}
