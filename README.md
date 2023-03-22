@@ -10,6 +10,7 @@ List of programs and their functions:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| [Hello-world]() |Actions|
-| [Ping-Pong]() |State, Actions, Events|
-| [Tic-Tac-Toe]() |State, Endpoints|
+| [Hello world]() |Actions|
+| [Umbrella alert]() |State, Actions, Nodes|
+| [Weekly report]() |Actions, Nodes|
+| [Tic Tac Toe]() |State, Endpoints|
