@@ -1,0 +1,22 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": [
+          {
+            "name": "setup",
+            "type": "Void"
+          },
+          {
+            "name": "handler",
+            "type": "Void"
+          }
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "forms": "forms:"
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "types": {
+    "forms": {
+      "gref_hash": "cdbd0d4ebd6473bdfa198299f295eb5f877a0b243f833c8b717f688d87aa6f5b",
+      "type": "forms:Root"
+    }
+  },
+  "imports": [
+    {
+      "name": "forms",
+      "schema": {
+        "types": [
+          {
+            "name": "Root",
+            "description": "",
+            "actions": [
+              {
+                "name": "create",
+                "description": "",
+                "type": "Ref",
+                "ofType": "Form",
+                "params": [
+                  {
+                    "name": "title",
+                    "type": "String"
+                  },
+                  {
+                    "name": "canResubmit",
+                    "type": "Boolean"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "endpoint",
+                "description": "",
+                "type": "String",
+                "params": [
+                  {
+                    "name": "method",
+                    "type": "String"
+                  },
+                  {
+                    "name": "body",
+                    "type": "String"
+                  },
+                  {
+                    "name": "path",
+                    "type": "String"
+                  },
+                  {
+                    "name": "query",
+                    "type": "String"
+                  },
+                  {
+                    "name": "headers",
+                    "type": "String"
+                  }
+                ],
+                "hints": {
+                  "hidden": true
+                }
+              }
+            ],
+            "fields": [
+              {
+                "name": "form",
+                "description": "",
+                "type": "Form",
+                "params": [
+                  {
+                    "name": "id",
+                    "type": "String"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "gref",
+                "description": "A reference to this node",
+                "type": "Ref",
+                "ofType": "Root",
+                "params": [],
+                "hints": {}
+              }
+            ],
+            "events": []
+          },
+          {
+            "name": "Form",
+            "description": "",
+            "actions": [
+              {
+                "name": "string",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "pattern",
+                    "type": "String"
+                  },
+                  {
+                    "name": "multiline",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "date",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "min",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "max",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "time",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "min",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "max",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "step",
+                    "type": "Float"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "datetime",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "min",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "max",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "number",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "min",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "max",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "step",
+                    "type": "Float"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "range",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "min",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "max",
+                    "type": "Int"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "step",
+                    "type": "Float"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "email",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "pattern",
+                    "type": "Stringt"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "password",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "pattern",
+                    "type": "Stringt"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "checkbox",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "select",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "options",
+                    "type": "String"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "radio",
+                "description": "",
+                "type": "Void",
+                "params": [
+                  {
+                    "name": "key",
+                    "type": "String"
+                  },
+                  {
+                    "name": "label",
+                    "type": "String"
+                  },
+                  {
+                    "name": "required",
+                    "type": "Boolean"
+                  },
+                  {
+                    "name": "options",
+                    "type": "String"
+                  }
+                ],
+                "hints": {}
+              }
+            ],
+            "fields": [
+              {
+                "name": "id",
+                "description": "",
+                "type": "String",
+                "params": [],
+                "hints": {}
+              },
+              {
+                "name": "url",
+                "description": "",
+                "type": "String",
+                "params": [],
+                "hints": {}
+              },
+              {
+                "name": "result",
+                "description": "",
+                "type": "String",
+                "params": [],
+                "hints": {}
+              },
+              {
+                "name": "gref",
+                "description": "A reference to this node",
+                "type": "Ref",
+                "ofType": "Form",
+                "params": [],
+                "hints": {}
+              }
+            ],
+            "events": [
+              {
+                "name": "submitted",
+                "description": "",
+                "type": "String",
+                "params": [],
+                "hints": {}
+              }
+            ]
+          },
+          {
+            "name": "Ui",
+            "description": "",
+            "actions": [],
+            "fields": [
+              {
+                "name": "html",
+                "description": "",
+                "type": "String",
+                "params": [],
+                "hints": {}
+              },
+              {
+                "name": "with",
+                "description": "",
+                "type": "String",
+                "params": [
+                  {
+                    "name": "ui",
+                    "type": "Ref",
+                    "ofType": "Ui"
+                  }
+                ],
+                "hints": {}
+              },
+              {
+                "name": "gref",
+                "description": "A reference to this node",
+                "type": "Ref",
+                "ofType": "Ui",
+                "params": [],
+                "hints": {}
+              }
+            ],
+            "events": []
+          }
+        ],
+        "imports": [
+          {
+            "name": "sys-clock",
+            "schema": {
+              "types": [
+                {
+                  "name": "Root",
+                  "description": "",
+                  "actions": [
+                    {
+                      "name": "sleep",
+                      "description": "",
+                      "type": "Void",
+                      "params": [
+                        {
+                          "name": "key",
+                          "type": "String"
+                        },
+                        {
+                          "name": "seconds",
+                          "type": "Float"
+                        }
+                      ],
+                      "hints": {}
+                    }
+                  ],
+                  "fields": [],
+                  "events": [
+                    {
+                      "name": "timer",
+                      "description": "",
+                      "type": "TimerEvent",
+                      "params": [
+                        {
+                          "name": "key",
+                          "type": "String"
+                        },
+                        {
+                          "name": "spec",
+                          "type": "String"
+                        },
+                        {
+                          "name": "maxCount",
+                          "type": "Int"
+                        }
+                      ],
+                      "hints": {}
+                    },
+                    {
+                      "name": "timerAt",
+                      "description": "",
+                      "type": "TimerEvent",
+                      "params": [
+                        {
+                          "name": "key",
+                          "type": "String"
+                        },
+                        {
+                          "name": "seconds",
+                          "type": "String"
+                        }
+                      ],
+                      "hints": {}
+                    }
+                  ]
+                },
+                {
+                  "name": "TimerEvent",
+                  "description": "",
+                  "actions": [],
+                  "fields": [
+                    {
+                      "name": "id",
+                      "description": "",
+                      "type": "String",
+                      "params": [],
+                      "hints": {}
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "imports": []
+            },
+            "source": {
+              "Program": ""
+            }
+          },
+          {
+            "name": "sys-process",
+            "schema": {
+              "types": [
+                {
+                  "name": "Root",
+                  "description": "",
+                  "actions": [],
+                  "fields": [
+                    {
+                      "name": "endpointUrl",
+                      "description": "Gets the program's own endpoint URL",
+                      "type": "String",
+                      "params": [],
+                      "hints": {}
+                    }
+                  ],
+                  "events": []
+                }
+              ],
+              "imports": []
+            },
+            "source": {
+              "Program": ""
+            }
+          }
+        ]
+      },
+      "source": {
+        "Program": "tbd"
+      }
+    }
+  ]
+}
