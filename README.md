@@ -10,7 +10,7 @@ List of programs and their functions:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| [Hello world]() |Actions|
-| [Umbrella alert]() |State, Actions, Nodes|
-| [Weekly report]() |Actions, Nodes|
-| [Tic Tac Toe]() |State, Endpoints|
+| [Hello world](https://github.com/membrane-io/examples/tree/main/0_Hello_World) |[Actions]|
+| [Umbrella alert](https://github.com/membrane-io/examples/tree/main/1_Umbrella_Alert) |[State, Actions, Nodes]|
+| [Weekly report](https://github.com/membrane-io/examples/blob/main/2_Weekly_Report/) |[State, Actions, Nodes]|
+| [Tic Tac Toe](https://github.com/membrane-io/examples/tree/main/3_Tic_Tac_Toe) |[State, Actions, Endpoints]|
