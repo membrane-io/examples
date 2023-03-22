@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "document": "google-docs:documents.one(id:\"16xt-S9yYXI-uw8VipwxZSa7BRch9CAfMir3rJvkh4xU\")",
     "gdocs": "google-docs:",
-    "membrane": "github:users.one(name:\"membrane-io\")",
     "http": "http:",
     "github": "github:"
   },
@@ -14,16 +12,17 @@
         "actions": [
           {
             "name": "setup",
-            "type": "Void"
-          },
-          {
-            "name": "report",
+            "type": "Void",
             "params": [
               {
                 "name": "org",
                 "type": "String"
               }
-            ],
+            ]
+          },
+          {
+            "name": "report",
+            "params": [],
             "type": "Void"
           }
         ]

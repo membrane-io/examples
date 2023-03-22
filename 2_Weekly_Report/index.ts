@@ -1,19 +1,21 @@
 // `state` can be used to persist any JavaScript value across updates
 // `root` is a reference to the root node of this program
 // `nodes` contains any nodes you add from the graph
-import { root, nodes } from "membrane";
+import { root, nodes, state } from "membrane";
 
-export async function setup() {
+export async function setup({ args: { org } }) {
   // Generates report every Friday at 5PM
+  state.org = org;
   root.report.$invokeAtCron(`0 0 17 ? * FRI`)
 }
-export async function report({ args: { org } }) {
+export async function report() {
   // Get the current time and the time one week ago in ISO format
   const currentTime = new Date();
   const oneWeekAgo = new Date(currentTime.getTime() - 7 * 24 * 60 * 60 * 1000);
   const isoCurrentTime = currentTime.toISOString();
   const isoOneWeekAgo = oneWeekAgo.toISOString();
 
+  const { org } = state;
   // Create a new Google Doc
   const doc = await nodes.gdocs.documents.create({ title: `Last Week Report - ${splitDate(isoCurrentTime)}` }).$invoke();
 
