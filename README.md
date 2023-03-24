@@ -10,8 +10,8 @@ List of programs and their functions:
 
 | EXAMPLE | FUNCTIONALITY |
 |---------|---------------|
-| [Hello world](https://github.com/membrane-io/examples/tree/main/0_Hello_World) |[Actions]|
-| [Umbrella alert](https://github.com/membrane-io/examples/tree/main/1_Umbrella_Alert) |[State, Actions, Nodes]|
-| [Weekly report](https://github.com/membrane-io/examples/blob/main/2_Weekly_Report/) |[State, Actions, Nodes]|
-| [Tic Tac Toe](https://github.com/membrane-io/examples/tree/main/3_Tic_Tac_Toe) |[State, Actions, Endpoints]|
-| [Job application form](https://github.com/membrane-io/examples/tree/main/4_job_application_form) |[Nodes, Events]|
+| [Hello world](https://github.com/membrane-io/examples/tree/main/0-hello-world) |[Actions]|
+| [Umbrella alert](https://github.com/membrane-io/examples/tree/main/1-umbrella-alert) |[State, Actions, Nodes]|
+| [Weekly report](https://github.com/membrane-io/examples/blob/main/2-weekly-report/) |[State, Actions, Nodes]|
+| [Tic Tac Toe](https://github.com/membrane-io/examples/tree/main/3-tic-tac-toe) |[State, Actions, Endpoints]|
+| [Job application form](https://github.com/membrane-io/examples/tree/main/4-job-application-form) |[Nodes, Events]|

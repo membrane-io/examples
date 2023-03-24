@@ -16,13 +16,14 @@ interface GameState {
 }
 
 export const Root = {
-  setup: () => {
+  configure: () => {
     const board: GameBoard = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => ""));
     const turn: GameSymbol = "X";
     let winner: GameSymbol | null = null;
 
     state.game = { board, turn, winner };
   },
+
   move: ({ args: { cell } }) => {
     const game = state.game;
     const move = Number(cell);
@@ -45,10 +46,11 @@ export const Root = {
     // Update the turn
     game.turn = game.turn === "X" ? "O" : "X";
   },
+  
   endpoint: async ({ args: { path, method } }) => {
     // If the path is "/restart", reset the game state and redirect to the root path
     if (path === "/restart") {
-      await root.setup();
+      await root.configure();
       return JSON.stringify({ status: 303, headers: { location: "/" } });
     }
     // Parse the requested cell and get the current game state
@@ -60,7 +62,7 @@ export const Root = {
     }
     // If the game board is not set up, return an error message
     if (!game.board) {
-      return JSON.stringify({ status: 404, body: "Run :setup action" });
+      return JSON.stringify({ status: 404, body: "Run :configure action" });
     }
     // check if the requested move is valid
     if (method === "POST") {

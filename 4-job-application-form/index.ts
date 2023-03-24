@@ -3,12 +3,13 @@
 // `state` is an object that persists across program updates. Store data here.
 import { nodes, root, state } from "membrane";
 
-export async function setup() {
+export async function configure() {
   // Create a form
   const form = await nodes.forms.create({
     title: "Job application",
     canResubmit: true,
   });
+  
   // Create a form field for each question
   const values = Promise.allSettled([
     form.string({ key: "name", label: "Full Name", required: true }),
