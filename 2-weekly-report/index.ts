@@ -10,7 +10,7 @@ export async function configure({ args: { org } }) {
 }
 
 export async function report() {
-  // Get the current time and the time one week ago
+  // Get the date range for the last week
   const [oneWeekAgo, currentTime] = getDateRangeString();
 
   const { org } = state;
@@ -43,7 +43,7 @@ export async function report() {
   }
 }
 
-// Returns the current time and the time one week ago
+// Helper function to get the date range for the last week
 function getDateRangeString(): string[] {
   const currentDate = new Date();
   const currentTime = currentDate.toISOString().slice(0, 10);
