@@ -5,7 +5,7 @@
         "name": "Root",
         "actions": [
           {
-            "name": "setup",
+            "name": "configure",
             "type": "Void"
           },
           {

@@ -11,7 +11,7 @@
         "fields": [],
         "actions": [
           {
-            "name": "setup",
+            "name": "configure",
             "type": "Void",
             "params": [
               {
