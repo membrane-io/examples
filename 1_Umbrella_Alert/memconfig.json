@@ -11,25 +11,25 @@
         ],
         "actions": [
           {
-            "name": "setup",
+            "name": "configure",
             "type": "Void",
             "params": [
               {
-                "name": "api_key",
+                "name": "apiKey",
                 "type": "String"
               },
               {
-                "name": "zip_code",
+                "name": "zipCode",
                 "type": "String"
               },
               {
-                "name": "country_code",
+                "name": "countryCode",
                 "type": "String"
               }
             ]
           },
           {
-            "name": "alert",
+            "name": "checkWeather",
             "type": "Void"
           }
         ],
