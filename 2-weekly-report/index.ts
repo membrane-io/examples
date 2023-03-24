@@ -11,21 +11,21 @@ export async function configure({ args: { org } }) {
 
 export async function report() {
   // Get the date range for the last week
-  const [oneWeekAgo, currentTime] = getDateRangeString();
+  const [oneWeekAgo, currentDate] = getDateRangeString();
 
   const { org } = state;
   const doc = await nodes.gdocs.documents.create({
-    title: `Last Week Report - ${currentTime}`,
+    title: `Last Week Report - ${currentDate}`,
   });
 
   await doc.insertText({
-    text: `Weekly Report (${oneWeekAgo} to ${currentTime})\n\n`,
+    text: `Weekly Report (${oneWeekAgo} to ${currentDate})\n\n`,
   });
 
   // Issues and pull requests created within the last week
   await doc.insertText({ text: `Issues and Pull Requests:\n\n` });
   const issuesAndPr = await nodes.github.search
-    .issues({ q: `org:${org}+created:${oneWeekAgo}..${currentTime}` })
+    .issues({ q: `org:${org}+created:${oneWeekAgo}..${currentDate}` })
     .$query(`{ items { html_url title created_at user {login}}}`);
   for (let event of issuesAndPr.items!) {
     await doc.insertText({ text: `${event.user!.login}: ${event.created_at!} - ` });
@@ -35,7 +35,7 @@ export async function report() {
   // Commits made within the last week
   await doc.insertText({ text: `\nCommits Summary:\n` });
   const commits = await nodes.github.search
-    .commits({ q: `org:${org}+committer-date:${oneWeekAgo}..${currentTime}` })
+    .commits({ q: `org:${org}+committer-date:${oneWeekAgo}..${currentDate}` })
     .$query(`{ items { sha html_url message date author {login}}}`);
   for (let event of commits.items!) {
     await doc.insertBullet({ text: `${event.author!.login}: ${event.date!} - ` });
@@ -45,10 +45,10 @@ export async function report() {
 
 // Helper function to get the date range for the last week
 function getDateRangeString(): string[] {
-  const currentDate = new Date();
-  const currentTime = currentDate.toISOString().slice(0, 10);
-  const oneWeekAgo = new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const date = new Date();
+  const currentDate = date.toISOString().slice(0, 10);
+  const oneWeekAgo = new Date(date.getTime() - 7 * 24 * 60 * 60 * 1000)
     .toISOString()
     .slice(0, 10);
-  return [oneWeekAgo, currentTime];
+  return [oneWeekAgo, currentDate];
 }
