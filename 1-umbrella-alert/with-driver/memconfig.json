@@ -1,0 +1,32 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "fields": [
+          {
+            "name": "status",
+            "type": "String"
+          }
+        ],
+        "actions": [
+          {
+            "name": "configure",
+            "type": "Void",
+            "params": []
+          },
+          {
+            "name": "checkWeather",
+            "type": "Void"
+          }
+        ],
+        "events": []
+      }
+    ]
+  },
+  "dependencies": {
+    "http": "http:",
+    "sms": "sms:",
+    "weather": "weather:weather"
+  }
+}

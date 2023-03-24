@@ -16,8 +16,7 @@ export const Root = {
   async configure({ args: { apiKey, zipCode, countryCode } }) {
     // Retrieve lat/lon for the given zip/country code
     const params = new URLSearchParams({
-      zip: zipCode,
-      countryCode: countryCode,
+      zip: `${zipCode},${countryCode}`,
       appid: apiKey,
     });
     const res = await fetch(`${BASE_URL}/geo/1.0/zip?${params}`);
